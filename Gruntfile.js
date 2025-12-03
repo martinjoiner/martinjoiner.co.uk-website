@@ -17,7 +17,7 @@ module.exports = function(grunt) {
         src: ['public_html/js/concatinated.js']
       },
       wpmincss: {
-        src: ['public_html/blog/wp-content/themes/martword/*style.min.css']
+        src: ['public_html/blog/wp-content/themes/martword/css/*style.min.css']
       }
     },
     jshint: {
@@ -58,7 +58,7 @@ module.exports = function(grunt) {
       },
       wp: {
         files: {
-          'public_html/blog/wp-content/themes/martword/style.min.css' : 
+          'public_html/blog/wp-content/themes/martword/css/style.min.css' :
           [ 'public_html/blog/wp-content/themes/martword/style.css' ]
         }
       }
@@ -76,7 +76,7 @@ module.exports = function(grunt) {
       },
       wpcss: {
         files: {
-          src: ['public_html/blog/wp-content/themes/martword/style.min.css']
+          src: ['public_html/blog/wp-content/themes/martword/css/style.min.css']
         }
       }
     },
@@ -94,8 +94,10 @@ module.exports = function(grunt) {
       },
       wpcss: {
         files: {
-          'public_html/blog/wp-content/themes/martword/header.php': ['public_html/blog/wp-content/themes/martword/*style.min.css'],
-        }
+          'public_html/blog/wp-content/themes/martword/header.php': [
+              'public_html/blog/wp-content/themes/martword/css/*style.min.css'
+          ]
+        },
       }
     },
     watch: {
