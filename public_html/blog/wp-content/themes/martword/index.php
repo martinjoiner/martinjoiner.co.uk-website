@@ -49,7 +49,7 @@
 
 		<div class="cat_tags clear">
 			<span class="category">
-				<?php _e('Filed under:','lightword'); 
+				<?php _e('Category:','lightword');
 				echo " ";
 				the_category(', ');
 				?>

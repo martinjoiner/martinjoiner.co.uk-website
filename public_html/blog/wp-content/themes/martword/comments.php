@@ -7,6 +7,8 @@ echo _e('This post is password protected. Enter the password to view comments.',
 echo '</p>';
 return;
 }
+
+$user_ID = get_current_user_id();
 $comments_nr = fb_get_comment_type_count('comment');
 $trackbacks_nr = fb_get_comment_type_count('pings');
 $oddcomment = 'alt ';
