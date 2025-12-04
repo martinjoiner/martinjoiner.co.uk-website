@@ -16,7 +16,7 @@
 
 	<div <?php post_class( ['type-index'] ); ?> id="post-<?php the_ID(); ?>">
 		
-		<?php if ($lw_post_author == "Main page" || $lw_post_author == "Both") : ?>
+		<?php if (isset($lw_post_author) && ($lw_post_author == "Main page" || $lw_post_author == "Both")) : ?>
 		<div class="about_author clear">
 			<span class="alignleft"><?php echo get_avatar( get_the_author_id(), '20' ); ?></span>
 			<div class="alignleft" style="width:470px;"><h4><?php _e('Posted by','lightword'); ?> <a href="<?php the_author_url(); ?> "><?php the_author(); ?></a></h4><?php // the_author_description(); if(!get_the_author_description()) _e('No description. Please complete your profile.','lightword'); ?></div>

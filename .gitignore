@@ -9,6 +9,7 @@ logs/*
 
 # Ignore Wordpress Blog, but not the 'martword' theme folder 
 public_html/blog/*
+!public_html/blog/error_log
 !public_html/blog/wp-content/
 
 public_html/blog/wp-content/*

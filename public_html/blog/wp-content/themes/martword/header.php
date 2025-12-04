@@ -76,9 +76,7 @@
 		<nav>
 			<ul class="lstNav">
 				<?php
-				if( is_front_page() ){
-		            $selected="s"; 
-		        }
+				$selected = is_front_page() ? 's' : '';
 		        ?>
 		        <li>
 		            <a class="<?php echo $selected; ?>" title="Home" href="<?php echo get_option('home'); ?>">

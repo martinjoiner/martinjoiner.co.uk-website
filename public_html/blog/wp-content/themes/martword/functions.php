@@ -18,12 +18,6 @@ $options = array (
             "std" => __('Original','lightword'),
             "type" => "select"),
 
-    array(  "name" => __('Cufon settings', 'lightword'),
-            "id" => $shortname."_cufon_settings",
-            "options" => array(__('Enabled','lightword'), __('Disabled','lightword'), __('Extra','lightword')),
-            "std" => __('Enabled','lightword'),
-            "type" => "select"),
-
     array(  "name" => __('Christmas Joy','lightword'),
 			"desc" => __('Because its Christmas! Happy Holidays and thanks for downloading LightWord theme','lightword'),
             "id" => $shortname."_christmas_joy",
@@ -290,7 +284,14 @@ echo "</p>";
 
 global $options;
 foreach ($options as $value) {
-if (get_option( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_option( $value['id'] ); }
+    if (!isset($value['id']) || !isset($value['std'])) {
+        continue;
+    }
+    if (get_option( $value['id'] ) === FALSE) {
+        ${$value['id']} = $value['std'];
+    } else {
+        ${$value['id']} = get_option( $value['id'] );
+    }
 }
 
 /**
@@ -439,24 +440,6 @@ if(is_single()||is_page()){
 }
 }
 
-// CUFON SETTINGS
-
-if ($lw_cufon_settings == "Enabled") {$cufon_enabled = 1; $cufon_extra = 0;}
-if ($lw_cufon_settings == "Extra") {$cufon_extra = 1; $cufon_enabled = 1;}
-
-function cufon_header(){
-global $cufon_enabled, $cufon_extra;
-$cufon_header_script = "\n<script src=\"".get_bloginfo('url')."/wp-content/themes/lightword/js/cufon-yui.js\" type=\"text/javascript\"></script>\n<script src=\"".get_bloginfo('url')."/wp-content/themes/lightword/js/vera.font.js\" type=\"text/javascript\"></script>";
-if($cufon_extra == 1) $cufon_header_script = str_replace("vera.font.js", "vera_extra.font.js", $cufon_header_script);
-if($cufon_enabled == 1) echo $cufon_header_script;
-}
-
-function cufon_footer(){
-global $cufon_enabled;
-$cufon_footer_script = "\n<script type=\"text/javascript\">/* <![CDATA[ */ Cufon.now(); /* ]]> */ </script>\n";
-if($cufon_enabled == 1) echo $cufon_footer_script;
-}
-
 
 // CANONICAL COMMENTS
 
@@ -569,7 +552,7 @@ edit_comment_link(__('edit','lightword'),'&nbsp;','');
 // SPAM PROTECT
 
 function check_referrer() {
-    if (!isset($_SERVER['HTTP_REFERER']) || $_SERVER['HTTP_REFERER'] == “”) {
+    if (!isset($_SERVER['HTTP_REFERER']) || $_SERVER['HTTP_REFERER'] == ï¿½ï¿½) {
         wp_die( __('Please enable referrers in your browser, or, if you\'re a spammer, bugger off!','lightword') );
     }
 }
@@ -622,7 +605,6 @@ function custom_dashboard_help() {
 // SIDEBARD WIDGETS
 
 if ( function_exists('register_sidebar') ) { register_sidebar(array('name' =>'Sidebar','before_widget' => '','after_widget' => '','before_title' => '<h3>','after_title' => '</h3>')); }
-if ( function_exists('register_sidebar') && $lw_sidebar_settings == "Two sidebars") { register_sidebar(array('name' =>'Sidebar Child','before_widget' => '','after_widget' => '','before_title' => '<h3>','after_title' => '</h3>')); }
 
 // WORDPRESS 2.9 FEATURES
 
