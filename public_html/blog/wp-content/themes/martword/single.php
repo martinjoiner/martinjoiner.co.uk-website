@@ -39,7 +39,7 @@
 
 		<div class="cat_tags clear">
 			<span class="category">
-				<?php _e('Filed under:','lightword'); 
+				<?php _e('Category:','lightword');
 				echo " ";
 				the_category(', ');
 				?>
@@ -57,15 +57,50 @@
 			<div class="clear"></div>
 		</div>
 
-		<div class="cat_tags_close"></div>
+        <div class="cat_tags_close"></div>
+
+        <?php
+        $category_ids = array_map(fn($category) => $category->get('term_id'), get_the_category());
+
+        $next_post_in_cat = get_next_post_link('&laquo; %', '', true);
+        $next_post_outside_cat = get_next_post_link('&laquo; %', '', false, $category_ids);
+
+        $previous_post_in_cat = get_previous_post_link('% &raquo;', '', true);
+        $previous_post_outside_cat = get_previous_post_link('% &raquo;', '', false, $category_ids);
+        ?>
+
+        <?php if ($next_post_in_cat || $previous_post_in_cat): ?>
+            <div class="next_previous_links">
+                <h2>In same category</h2>
+            <?php if ($next_post_in_cat): ?>
+                <span class="alignleft"><?=$next_post_in_cat?></span>
+            <?php endif; ?>
+
+            <?php if ($previous_post_in_cat): ?>
+                <span class="alignright"><?=$previous_post_in_cat?></span>
+            <?php endif; ?>
+
+                <div class="clear"></div>
+            </div>
+        <?php endif; ?>
+
+        <?php if ($next_post_outside_cat || $previous_post_outside_cat): ?>
+            <div class="cat_tags_close"></div>
+            <div class="next_previous_links">
+                <h2>From a different category</h2>
+            <?php if ($next_post_outside_cat !== $next_post_in_cat): ?>
+                <span class="alignleft"><?=$next_post_outside_cat?></span>
+            <?php endif; ?>
+
+            <?php if ($previous_post_outside_cat !== $previous_post_in_cat): ?>
+                <span class="alignright"><?=$previous_post_outside_cat?></span>
+            <?php endif; ?>
+
+                <div class="clear"></div>
+            </div>
+        <?php endif; ?>
 
 		<?php comments_template(); ?>
-
-		<div class="next_previous_links">
-			<span class="alignleft"><?php next_post('&laquo; %','', 'yes'); ?></span>
-			<span class="alignright"><?php previous_post('% &raquo;','', 'yes'); ?></span>
-			<div class="clear"></div>
-		</div>
 
 	</div><!-- /#post-xxx -->
 
