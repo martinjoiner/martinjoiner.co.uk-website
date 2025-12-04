@@ -60,18 +60,18 @@
         <div class="cat_tags_close"></div>
 
         <?php
-        $category_ids = array_map(fn($category) => $category->get('term_id'), get_the_category());
+        $category_ids = array_map(fn($category) => $category->term_id, get_the_category());
 
-        $next_post_in_cat = get_next_post_link('&laquo; %', '', true);
-        $next_post_outside_cat = get_next_post_link('&laquo; %', '', false, $category_ids);
+        $next_post_in_cat = get_next_post_link('&laquo; %link', '%title', true);
+        $next_post_outside_cat = get_next_post_link('&laquo; %link', '%title', false, $category_ids);
 
-        $previous_post_in_cat = get_previous_post_link('% &raquo;', '', true);
-        $previous_post_outside_cat = get_previous_post_link('% &raquo;', '', false, $category_ids);
+        $previous_post_in_cat = get_previous_post_link('%link &raquo;', '%title', true);
+        $previous_post_outside_cat = get_previous_post_link('%link &raquo;', '%title', false, $category_ids);
         ?>
 
         <?php if ($next_post_in_cat || $previous_post_in_cat): ?>
             <div class="next_previous_links">
-                <h2>In same category</h2>
+                <h2>More from the same category</h2>
             <?php if ($next_post_in_cat): ?>
                 <span class="alignleft"><?=$next_post_in_cat?></span>
             <?php endif; ?>
