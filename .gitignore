@@ -1,29 +1,16 @@
 
-# Ignore dev-only things
+# Ignore NPM packages
 node_modules
+
+# Ignore IntelliJ project folder
 .idea
 
 # Ignore logs
 logs/*
 
-
-# Ignore Wordpress Blog, but not the 'martword' theme folder 
-public_html/blog/*
+# Ignore Wordpress Blog, but not the error_log file
+public_html/blog
 !public_html/blog/error_log
-!public_html/blog/wp-content/
-
-public_html/blog/wp-content/*
-!public_html/blog/wp-content/themes/
-
-public_html/blog/wp-content/themes/*
-!public_html/blog/wp-content/themes/martword/
-
-!public_html/blog/wp-content/themes/martword/*
-!public_html/blog/wp-content/themes/martword/*/*
-!public_html/blog/wp-content/themes/martword/*/*/*
-!public_html/blog/wp-content/themes/martword/*/*/*/*
-!public_html/blog/wp-content/themes/martword/*/*/*/*/*
-
 
 # Ignore CPanel files
 .ftpquota
