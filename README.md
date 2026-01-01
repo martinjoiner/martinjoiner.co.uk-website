@@ -1,15 +1,12 @@
 # martinjoiner.co.uk
 
-## Martin Joiner's website + WordPress template 
+## Martin Joiner's website
 
 ![martinjoiner.co.uk home page screenshot](/docs/screenshot.jpg)
 
-Live at: https://martinjoiner.co.uk 
+[martinjoiner.co.uk](https://martinjoiner.co.uk) is a simple personal site with a homepage, CV and portfolio.
 
-This repo is kind of 2 websites in one, but they are codependent so they belong together: 
-
-* /public_html/blog/wp-content/themes/martword/ contains a WordPress theme to style the blog
-* All other folders inside /public_html are a simple site with homepage, CV and portfolio  
+(Note: The `public_html/blog` folder is ignored because in production there is a WordPress blog installed in that folder)
 
 Technology
 ----------
