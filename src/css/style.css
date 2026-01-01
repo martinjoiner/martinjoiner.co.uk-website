@@ -347,16 +347,24 @@ img.homeBlink {
 	background-color: #d2ffcb;
 }
 
-.tag.tag-highlight-blue {
+.tag.tag-highlight-turquoise {
 	background-color: #bafefe;
 }
 
 .tag.tag-highlight-pink {
-	background-color: #ffc2f1;
+	background-color: #ffccf7;
 }
 
 .tag.tag-highlight-orange {
 	background-color: #ffd3a1;
+}
+
+.tag.tag-highlight-purple {
+	background-color: #ccbbff;
+}
+
+.tag.tag-highlight-blue {
+	background-color: #c0e4ff;
 }
 
 
