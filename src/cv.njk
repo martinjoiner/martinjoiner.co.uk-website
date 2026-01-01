@@ -18,9 +18,9 @@ layout: main.njk
 		<h2>About Me</h2>
 
 		<p class="introParagraph">
-			I am a creative full-stack developer with a passion for good UX.
+			I am a creative multilingual developer with a passion for good UX.
 			I enjoy roles with an element of mentoring.
-			Not afraid to work on improving all the components of software including the documentation and processes that create it.
+			I work across all components of software to remove unnecessary complexity from inherently complex systems.
 			I thrive in a culture of innovation and modern standards and love a good team discussion to decide our best approach.
 			Open source contributor.
 		</p>
@@ -35,13 +35,13 @@ layout: main.njk
 
 	<h3>Languages</h3>
 
-	<p>{% tag "PHP" %}, {% tag "MySQL" %}, {% tag "JavaScript" %}</p>
+	<p>{% tag "PHP" %}, {% tag "JavaScript" %}, {% tag "Python" %}, {% tag "Ruby" %}, {% tag "MySQL" %}</p>
 
 	<h3>Frameworks</h3>
 
-	<p>{% tag "Laravel" %}, {% tag "Symfony" %}, {% tag tech="CodeIgniter" %}, {% tag tech="WordPress" %}</p>
+	<p>{% tag "Symfony" %}, {% tag "Laravel" %}, {% tag tech="Express" %}, {% tag tech="CodeIgniter" %}</p>
 
-	<p>{% tag tech="Behat" %}, {% tag "PHPUnit" %}, {% tag "Psalm" %}, {% tag "CodeSniffer" %}</p>
+	<p>{% tag tech="Behat" %}, {% tag "PHPUnit" %}, {% tag "PyTest" %}, {% tag "PyTest" %}, {% tag "Psalm" %}, {% tag "CodeSniffer" %}</p>
 
 	<h3>Frontend</h3>
 
@@ -81,27 +81,50 @@ layout: main.njk
 <div class="cvPrimaryCol">
 
 	<h2>Notable Projects</h2>
+
+	<section class="project">
+		<header>
+			<h3>Nourish</h3>
+			<span class="dRange">Sep 2023 Acquisition - Present</span>
+		</header>
+		<p>Post-acquisition continuation of role as Lead Engineer for Integrations Team, now leading 4 engineers.
+			Now responsible for integrations from both companies plus a public API, documentation and internal microservices.
+			Team now writing {% tag "PHP" %} (Symfony), {% tag "Python" %}, TypeScript and {% tag "Ruby" %} on Rails,
+			each with it's own validation library, linter, test framework and logging platform.
+			Deployed on {% tag "AWS" %} API Gateway using Serverless.
+            </p>
+
+		<p>Led complex processes: Aligning data schemas of 2 integrated products. Improving logging. Removed tech debt
+			of an unfinished renaming process. Debugging race conditions over distributed systems.
+			</p>
+
+		<p>Completed a 5-part management training course. Facilitated PDPs and training. Ran sprint ceremonies.
+			Attended quarterly offsite kick-offs. Led additional engineers from adjacent teams during crunch times.
+			Managed cross-team collaboration in a department of 65 engineers in a company of 250.
+			</p>
+
+		<ul class="outLink">
+			<li>&ndash; <a target=_blank href="https://nourishcare.com/">nourishcare.com</a></li>
+		</ul>
+	</section>
     
     <section class="project">
 		<header>
         	<h3>CarePlanner</h3>
-			<span class="dRange">Sep 2022 - Present</span>
+			<span class="dRange">Sep 2022 - Sep 2023 Acquisition</span>
 		</header>
-        <p>Joined as part of the API Team, built a complex new endpoint that projected composite data over a calendar
-			view.</p>
+        <p>Joined API Team, built a complex composite calendar endpoint. Promoted to lead new <strong>Integrations Team</strong>
+			took over 5 integrations
+			written in {% tag "PHP" %} {% tag "Symfony" %} with {% tag "AWS" %} SNS/SQS event driven
+			architecture.</p>
 
-		<p>Promoted to lead a new <strong>Integrations Team</strong> inheriting 5 complicated projects
-			written in {% tag "PHP" %} {% tag "Symfony" %} with {% tag "AWS" %} SNS/SQS powered event driven
-			architecture. They all needed words and diagrams to document how they worked with partner
-			company's {% tag tech="APIs", tag="restapi" %}.</p>
-
-		<p>Devised a new internal platform for support staff to manage partner integrations. This included unprocessable
-			entity reporting and {% tag "JavaScript" %} {% tag tech="WebSocket" %} powered animated progress bars
-			that visualise the huge sync jobs which can take up to 40 minutes.</p>
+		<p>Devised a new internal platform for managing partner integrations, including unprocessable entity reporting
+			and {% tag "JavaScript" %} {% tag tech="WebSocket" %} powered live progress bars that visualise long sync
+			jobs.</p>
 
 		<p>During acquisition by
 			<a href="https://nourishcare.com/" target="_blank" referrerpolicy="no-referrer">Nourish Care</a> I led the
-			new build of the CarePlanner-Nourish integration project.</p>
+			new build of the CarePlanner-Nourish integration.</p>
 
 		<p>All projects use {% tag tech="CircleCI", tag="ci" %} running {% tag tech="Behat" %} {% tag "PHPUnit" %} {% tag "Psalm" %}
 			{% tag "CodeSniffer" %} and {% tag "Docker" %} for local dev.
@@ -162,15 +185,14 @@ layout: main.njk
 			<span class="dRange">2010 - Present day</span>
 		</header>
 
-		<p>I built Open Mic Finder in 2010 driven by a frustration at the lack of <em>reliable</em> online information.
-			Over a decade later and it's still running with ~16,000 unique users per month, with a database holding
-			~4000 sets of venue details, all submitted and maintained by the users themselves.
-
-			It generates no revenue but I keep it alive as a demonstration of my ability to design, build and
-			administrate an entire website on a long term basis.
+		<p>I built Open Mic Finder in 2010 motivated by a lack of <em>reliable</em> online information.
+			16 years later the site now gets ~30,000 unique users each month. The database holds
+			~4000 sets of user-submitted venue details.
+			It generates no revenue, but I keep it alive as a demonstration of my broad skills to design, build, promote
+			and moderate a site on a long term basis with no budget.
 		</p>
 		<p>
-			Over the 14 years I've taken it from {% tag "PHP" %} version 5.4 to 8.3, survived the browser wars,
+			Over the years I've taken it from {% tag "PHP" %} version 5.4 to 8.3, survived the browser wars,
 			replaced the interactive Flash map with Google Maps API, made the interface responsive,
 			played with Open Graph Protocol and Rich snippets,
 			Leveraged several free {% tag tech="APIs", tag="restapi" %} (Twitter, MeetUp, MailChimp, Transport),
@@ -298,7 +320,7 @@ layout: main.njk
 			<span class="dRange">2015</span>
 		</header>
 
-		<p class="role">Via my role as Senior frontend developer at <a href="http://www.somoglobal.com/">Somo Global</a> (2015)</p>
+		<p class="role">Via my role as Senior frontend developer at Somo Global (2015)</p>
 
 		<p>I was responsible for {% tag "JavaScript" %}, CSS and some {% tag "PHP" %}
             ({% tag "Symfony" %}) on a CSR charity project.
@@ -383,53 +405,3 @@ layout: main.njk
 
 </div>
 </div><!-- /.cv -->
-
-<script>
-
-	const highlightColours = ['yellow', 'green', 'blue', 'pink', 'orange'];
-	let colourPointer = 0;
-
-	/** @var string[] highlightedTags */
-	let highlightedTags = [];
-
-	// Initialise by attaching click listener to all tags
-	for (const tagElem of document.getElementsByClassName('tag')) {
-		tagElem.addEventListener('mouseup', function() {
-			const tag = this.dataset.tag;
-			if (highlightedTags.includes(tag)) {
-				return lowlightAllTags(tag);
-			}
-
-			highlightAllTags(tag);
-		});
-	}
-
-	function gimmeNextColour() {
-		let colour = highlightColours[colourPointer];
-		colourPointer = colourPointer >= highlightColours.length - 1 ? 0 : colourPointer + 1;
-		return colour;
-	}
-
-	function highlightAllTags(tag) {
-		highlightedTags.push(tag);
-		const colour = gimmeNextColour();
-
-		let taggedElems = document.getElementsByClassName(tag);
-		for (let i = 0, iLimit = taggedElems.length; i < iLimit; i++) {
-			taggedElems[i].className += ' tag-highlight-' + colour;
-		}
-	}
-
-	function lowlightAllTags(tag) {
-		const index = highlightedTags.indexOf(tag);
-		if (index > -1) {
-			highlightedTags.splice(index, 1);
-		}
-
-		let taggedElems = document.getElementsByClassName(tag);
-		for (let i = 0, iLimit = taggedElems.length; i < iLimit; i++){
-			taggedElems[i].className = taggedElems[i].className.replace(/ tag-highlight-[a-z]+/, '');
-		}
-	}
-
-</script>
