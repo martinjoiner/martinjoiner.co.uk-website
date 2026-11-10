@@ -14,7 +14,7 @@
     "url": "git://github.com/martinjoiner/martinjoiner.git"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.2",
+    "@11ty/eleventy": "^3.1.8",
     "check-html-links": "^0.2.4",
     "grunt": "^1.6.1",
     "grunt-contrib-clean": "~2.0.1",
