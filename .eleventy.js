@@ -1,17 +1,19 @@
 
-const htmlmin = require("html-minifier");
+import { minify } from 'html-minifier';
 
-module.exports = function(eleventyConfig) {
+export default function(eleventyConfig) {
 
   eleventyConfig.addWatchTarget("./src/");
 
-  eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
+  eleventyConfig.addTransform("htmlmin", async function(content, outputPath) {
     // Eleventy 1.0+: use this.inputPath and this.outputPath instead
     if( outputPath.endsWith(".html") ) {
-      return htmlmin.minify(content, {
-        useShortDoctype: true,
+      return await minify(content, {
+        collapseWhitespace: true,
+        removeAttributeQuotes: false,
         removeComments: true,
-        collapseWhitespace: true
+        removeOptionalTags: false,
+        useShortDoctype: true,
       });
     }
 
@@ -32,12 +34,7 @@ module.exports = function(eleventyConfig) {
     return '<span class="tag tag-' + tag.tag + '" data-tag="tag-' + tag.tag + '">' + tag.tech + '</span>'
   });
 
-  return {
-    dir: {
-      input: "src",
-      output: "public_html"
-    }
-  }
+  eleventyConfig.setInputDirectory("src");
+  eleventyConfig.setOutputDirectory("public_html");
 
 };
-

@@ -5,6 +5,7 @@
   "license": "UNLICENSED",
   "description": "The professional website of Martin Joiner martinjoiner.co.uk",
   "main": "public_html/",
+  "type": "module",
   "scripts": {
     "test": "npx check-html-links public_html"
   },
@@ -24,7 +25,7 @@
     "grunt-contrib-watch": "~1.1.0",
     "grunt-injector": "~1.1.0",
     "grunt-rev": "~0.1.0",
-    "html-minifier": "^4.0.0"
+    "html-minifier": "^5.0.3"
   },
   "author": "Martin Joiner"
 }
